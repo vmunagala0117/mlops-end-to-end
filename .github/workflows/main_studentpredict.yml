@@ -69,6 +69,9 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_401FE1E31A9641279E9B2233AF921D38 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6CC3B06982894AF88621BE19DC768303 }}
 
+      - name: Set Startup Command
+        run: echo "gunicorn --bind=0.0.0.0 --timeout 600 src.frontend.flask_app:app" > startup.txt
+
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
