@@ -1,10 +1,16 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS,cross_origin
 from src.pipelines.predict_pipeline import CustomData, PredictPipeline
 
 app = Flask(__name__)
 
+@app.route('/')
+@cross_origin()
+def home_page():
+    return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/predict',methods=['GET','POST'])
+@cross_origin()
 def predict_datapoint():
     if request.method == 'GET':
         return render_template('index.html')

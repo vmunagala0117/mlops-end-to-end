@@ -24,4 +24,5 @@ for local development, run:
 4. `utils.py`: Common functions shared across components.
 
 
+python .\src\frontend\flask_app.py  
 
