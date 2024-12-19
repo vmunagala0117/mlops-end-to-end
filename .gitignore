@@ -133,8 +133,8 @@ vnenv/
 vnenv.bak/
 .vnenv
 logs/
-.artifacts
-artifacts/
+.vs/
+.vscode/
 
 # Spyder project settings
 .spyderproject
